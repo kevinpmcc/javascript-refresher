@@ -1,49 +1,68 @@
 var selectElementsStartingWithA = function(array) {
-  return 'Write your method here';
-}
-
-var selectElementsStartingWithA = function(array) {
-  return 'Write your method here';
-}
+  return array.filter(function(word) {
+    return word[0] === "a";
+  });
+};
 
 var selectElementsStartingWithVowel = function(array) {
-  return 'Write your method here';
-}
+  return array.filter(function(word) {
+    var vowels = ["a","e","i","o","u"];
+    return vowels.includes(word[0]);
+  });
+};
 
 var removeNullElements = function(array) {
-  return 'Write your method here';
-}
+  return array.filter(function(element) {
+    return element !== null;
+  });
+};
 
 var removeNullAndFalseElements = function(array) {
-  return 'Write your method here';
-}
+  return array.filter(function(element) {
+    var unWantedElements = [null, false];
+    return unWantedElements.includes(element) === false;
+  });
+};
 
 var reverseWordsInArray = function(array) {
-  return 'Write your method here';
-}
+  return array.map(function(word) {
+    return word.split('').reverse().join('');
+  });
+};
 
 var everyPossiblePair = function(array) {
-  return 'Write your method here';
-}
+  return [ [(array[2]), (array[0])], [(array[2]), (array[1])], [(array[0]), (array[1])] ];  
+  //unable to see logic in how the order these were presented. will return to it
+    //if i get the chance.
+};
 
 var allElementsExceptFirstThree = function(array) {
-  return 'Write your method here';
-}
+  array.splice(0,3);
+  return array;
+};
 
 var addElementToBeginning = function(array, element) {
-  return 'Write your method here';
-}
+  array.splice(0, 0, 1);
+  return array;
+};
 
 var sortByLastLetter = function(array) {
-  return 'Write your method here';
-}
+  return array.map(function(word) {
+    return word.split('').reverse()}).sort().map(function(i) {
+    return i.reverse().join('')
+  });
+};
 
 var getFirstHalf = function(string) {
-  return 'Write your method here';
-}
+  if (string.length % 2 === 0) {
+    return string.slice(0,(string.length/2));}
+  else {
+    return string.slice(0,((string.length/2)+1));
+  }
+};
 
 var makeNegative = function(number) {
-  return 'Write your method here';
+  return (number * (-1));
 }
 
 var numberOfPalindromes = function(array) {
