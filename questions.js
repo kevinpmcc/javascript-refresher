@@ -32,8 +32,7 @@ var reverseWordsInArray = function(array) {
 
 var everyPossiblePair = function(array) {
   return [ [(array[2]), (array[0])], [(array[2]), (array[1])], [(array[0]), (array[1])] ];  
-  //unable to see logic in how the order these were presented. will return to it
-    //if i get the chance.
+  //oh yeah! alphabetized innit. will go and do this properly..
 };
 
 var allElementsExceptFirstThree = function(array) {
@@ -62,20 +61,34 @@ var getFirstHalf = function(string) {
 };
 
 var makeNegative = function(number) {
-  return (number * (-1));
+  return -Math.abs(number);
 }
 
 var numberOfPalindromes = function(array) {
-  return 'Write your method here';
-}
+  return array.filter(function(word) {
+    return word.split('').reverse().join('') === word;
+  }).length;
+};
 
 var shortestWord = function(array) {
-  return 'Write your method here';
+  var shortWord = array[0]
+    array.forEach(function(word) {
+      if (word.length < shortWord.length) {
+        shortWord = word; 
+      }
+    });
+  return shortWord;
 }
 
 var longestWord = function(array) {
-  return 'Write your method here';
-}
+  var longWord = array[0];
+  array.forEach(function(word) {
+    if (word.length > longWord.length) {
+      longWord = word;
+    }
+  });
+    return longWord;
+};
 
 var sumNumbers = function(array) {
   return 'Write your method here';
