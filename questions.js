@@ -1,26 +1,16 @@
 var selectElementsStartingWithA = function(array) {
-  return array.filter(function(word) {
-    return word[0] === "a";
   });
 };
 
 var selectElementsStartingWithVowel = function(array) {
-  return array.filter(function(word) {
-    var vowels = ["a","e","i","o","u"];
-    return vowels.includes(word[0]);
   });
 };
 
 var removeNullElements = function(array) {
-  return array.filter(function(element) {
-    return element !== null;
   });
 };
 
 var removeNullAndFalseElements = function(array) {
-  return array.filter(function(element) {
-    var unWantedElements = [null, false];
-    return unWantedElements.includes(element) === false;
   });
 };
 
@@ -87,27 +77,36 @@ var longestWord = function(array) {
       longWord = word;
     }
   });
-    return longWord;
+  return longWord;
 };
 
 var sumNumbers = function(array) {
-  return 'Write your method here';
+  return array.reduce(function(a,b) {
+    return a + b; 
+  });
 }
 
 var repeatElements = function(array) {
-  return 'Write your method here';
+  array.forEach(function(element){
+    array.push(element);
+    });
+  return array;
 }
 
 var stringToNumber = function(string) {
-  return 'Write your method here';
+  return parseInt(string);
 }
 
 var calculateAverage = function(array) {
-  return 'Write your method here';
+  arrayTotal = array.reduce(function(a,b) {
+    return a + b;
+  });
+  return arrayTotal/array.length;
 }
 
 var getElementsUntilGreaterThanFive = function(array) {
-  return 'Write your method here';
+  console.log(array);
+  //return [ 1, 3, 5, 4, 1, 2 ]
 }
 
 var convertArrayToObject = function(array) {
